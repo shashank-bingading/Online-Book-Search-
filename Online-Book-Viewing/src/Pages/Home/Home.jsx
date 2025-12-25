@@ -1,11 +1,10 @@
-import React from 'react'
 import {useState} from 'react'
 import Booklist from '../../components/BookList/Booklist.jsx'
 import SearchBar from '../../components/SearchBar/SearchBar.jsx'
 const Home = () => {
-    const [books, setBooks] = React.useState([]);
-    const [loading, setLoading] = React.useState(false);
-    const [error, setError] = React.useState(null);
+    const [books, setBooks] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
 
     const handleSearch = async (searchText) => {
 
