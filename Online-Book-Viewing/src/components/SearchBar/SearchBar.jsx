@@ -3,7 +3,7 @@ import {useState} from 'react'
 const SearchBar = ({onSearch}) => {
   const [searchText, setSearchText] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSeacrh = (e) => {
     e.preventDefault();
   if (onSearch){
     onSearch(searchText);

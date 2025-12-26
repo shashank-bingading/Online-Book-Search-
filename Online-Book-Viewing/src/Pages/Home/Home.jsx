@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import Booklist from '../../components/BookList/Booklist.jsx'
 import SearchBar from '../../components/SearchBar/SearchBar.jsx'
+import Loader from '../../components/Loader/Loader.jsx';
 const Home = () => {
     const [books, setBooks] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -33,7 +34,7 @@ const Home = () => {
     <main className = "home-container">
         <h1 className ="home-title"> Search for Books</h1>
             <SearchBar onSearch={handleSearch}/>
-            {loading && <p>Loading...</p>}
+            {loading && <Loader/>}
             {error && <p className="error-message">{error}</p>}
             {!loading && !error && <Booklist books={books}/>}
         

@@ -1,9 +1,8 @@
-import React from 'react'
-
+import './Loader.css'
 const Loader = () => {
   return (
-    <div>
-      
+    <div className="loader-wrapper">
+      <div className="loader-spinner" />
     </div>
   )
 }
