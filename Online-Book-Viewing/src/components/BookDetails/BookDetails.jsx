@@ -1,4 +1,4 @@
-import { Form, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Loader from "../Loader/Loader";
 import "./BookDetails.css";
 import { useState, useEffect } from "react";
@@ -23,7 +23,7 @@ const BookDetails = () => {
         setLoading(true);
         setError(null);
 
-        const url = `https://openlibrary.org/${bookId}.json`;
+        const url = `/api/openlibrary/works/${bookId}.json`;
         const response = await fetch(url);
         if (!response.ok) {
           throw new Error("Failed to fetch book details");
@@ -68,18 +68,42 @@ const BookDetails = () => {
       : book.description && book.description.value;
   const subjects = book.subjects;
 
+  const getCoverUrl = (book) => {
+  const coverId = book.covers?.[0]; 
+  if (coverId) {
+    return `https://covers.openlibrary.org/b/id/${coverId}-L.jpg`; // L = Large
+  }
+  return null;
+};
+
+const coverUrl = book ? getCoverUrl(book) : null;
+
   return (
     <main className="book-details-container">
-      <h1 className="book-details-titles">{title}</h1>
-      {description && <p className="book-details-description">{description}</p>}
-      {subjects && subjects.lenght > 0 && (
+        <div className="book-details-hero">
+      <h1 className="book-details-titles">{title}</h1></div>
+
+       <div className="book-details-content">
+      <div className="book-cover-container">
+        {coverUrl && <img src={coverUrl} alt={title} className="book-cover" />}
+      </div>
+      
+      <div>
+        {description && (
+          <div className="book-details-description">{description}</div>
+        )}
+      </div>
+        </div>
+
+
+      {subjects && subjects.length > 0 && (
         <div className="book-details-subjects">
           <h3>Subjects</h3>
-          <ul>
-            {subjects.slice(0, 10).map((subj) => (
-              <li key={subj}>{subj}</li>
+            <div className="subjects-grid">
+            {subjects.slice(0, 10).map((subj, index) => (
+              <div key={index} className="subject-tag">{subj}</div>
             ))}
-          </ul>
+          </div>
         </div>
       )}
     </main>
@@ -87,3 +111,21 @@ const BookDetails = () => {
 };
 
 export default BookDetails;
+
+// import { useParams } from "react-router-dom";
+
+// const BookDetails = () => {
+//   const { bookId } = useParams();
+
+//   return (
+//     <main style={{ padding: "2rem" }}>
+//       <h1>BOOK DETAILS TEST PAGE</h1>
+//       <p>
+//         bookId from URL: <strong>{bookId}</strong>
+//       </p>
+//       <p>If you see this, routing works perfectly.</p>
+//     </main>
+//   );
+// };
+
+// export default BookDetails;

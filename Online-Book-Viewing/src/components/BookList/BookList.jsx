@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import './BookList.css'
+import "./BookList.css";
 
 const Booklist = ({ books }) => {
   if (!books || books.length === 0) {
@@ -9,7 +9,9 @@ const Booklist = ({ books }) => {
     <div className="book-list">
       {books.map((book, index) => {
         const title = book.title ? book.title : "No Title Available";
-        const authors = book.author_name?book.author_name:"No authors found";
+        const authors = book.author_name
+          ? book.author_name
+          : "No authors found";
         let authorText = "";
 
         if (Array.isArray(authors)) {
@@ -44,7 +46,7 @@ const Booklist = ({ books }) => {
         return (
           <div key={workKey || index} className="book-card">
             {workKey ? (
-              <Link to={`/book${workKey}`} className="book-link">
+              <Link to={`/book/${workKey.replace('/works/', '')}`} className="book-link">
                 {content}
               </Link>
             ) : (
