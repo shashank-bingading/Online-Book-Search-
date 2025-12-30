@@ -2,6 +2,8 @@ import {useState} from 'react'
 import Booklist from '../../components/BookList/Booklist.jsx'
 import SearchBar from '../../components/SearchBar/SearchBar.jsx'
 import Loader from '../../components/Loader/Loader.jsx';
+import './Home.css'
+
 const Home = () => {
     const [books, setBooks] = useState([]);
     const [loading, setLoading] = useState(false);

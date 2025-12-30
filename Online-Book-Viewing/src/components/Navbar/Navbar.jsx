@@ -1,15 +1,13 @@
 import {Link} from 'react-router-dom'
+import './Navbar.css'
 
 const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="nav-content">
-        {/* App logo / brand */}
         <Link to="/" className="nav-logo">
-          📚 BookSearch
+          📚 HerSoftLibrary
         </Link>
-
-        {/* Right side links */}
         <div className="nav-links">
           <Link to="/" className="nav-link">
             Home
