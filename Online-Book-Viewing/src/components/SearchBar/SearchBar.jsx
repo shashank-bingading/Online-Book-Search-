@@ -4,7 +4,7 @@ import './SearchBar.css'
 const SearchBar = ({onSearch}) => {
   const [searchText, setSearchText] = useState('');
 
-  const handleSeacrh = (e) => {
+  const handleSearch = (e) => {
     e.preventDefault();
   if (onSearch){
     onSearch(searchText);
@@ -13,7 +13,7 @@ const SearchBar = ({onSearch}) => {
 
   return (
     <div>
-      <form className='search-form' onSubmit = {handleSeacrh}>
+      <form className='search-form' onSubmit = {handleSearch}>
         <input 
           type="text" 
           placeholder="Search for books..." 

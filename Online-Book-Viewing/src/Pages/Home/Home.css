@@ -5,6 +5,8 @@
 }
 
 .home-title {
+  font-family:'sans-serif';
+  color:#9279BA ;
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;

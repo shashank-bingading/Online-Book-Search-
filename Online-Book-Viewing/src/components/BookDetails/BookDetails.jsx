@@ -98,7 +98,7 @@ const coverUrl = book ? getCoverUrl(book) : null;
 
       {subjects && subjects.length > 0 && (
         <div className="book-details-subjects">
-          <h3>Subjects</h3>
+          <h3 className="heading-subject">Subjects</h3>
             <div className="subjects-grid">
             {subjects.slice(0, 10).map((subj, index) => (
               <div key={index} className="subject-tag">{subj}</div>
@@ -112,20 +112,3 @@ const coverUrl = book ? getCoverUrl(book) : null;
 
 export default BookDetails;
 
-// import { useParams } from "react-router-dom";
-
-// const BookDetails = () => {
-//   const { bookId } = useParams();
-
-//   return (
-//     <main style={{ padding: "2rem" }}>
-//       <h1>BOOK DETAILS TEST PAGE</h1>
-//       <p>
-//         bookId from URL: <strong>{bookId}</strong>
-//       </p>
-//       <p>If you see this, routing works perfectly.</p>
-//     </main>
-//   );
-// };
-
-// export default BookDetails;

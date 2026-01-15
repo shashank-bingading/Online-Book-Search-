@@ -6,10 +6,10 @@
 }
 
 .book-details-hero {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #764ba2;
   padding: 3rem 2rem;
   border-radius: 20px;
-  color: white;
+  color: aliceblue;
   margin-bottom: 2.5rem;
   text-align: center;
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
@@ -62,6 +62,17 @@
   color: #374151;
   margin-bottom: 2rem;
 }
+.book-details-subjects .heading-subject{
+ display: block; 
+  font-size: 2.5rem; 
+  font-family: 'Inter', sans-serif; 
+  color: #764ba2;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #f3f4f6; 
+  padding-bottom: 0.5rem;
+}
+
 
 .book-details-subjects {
   grid-column: 1 / -1;
@@ -81,14 +92,14 @@
 }
 
 .subject-tag {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: #9279BA;
   color: white;
   padding: 0.75rem 1.25rem;
   border-radius: 50px;
   font-size: 0.95rem;
   font-weight: 500;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(240,147,251,0.4);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
   transition: all 0.3s ease;
   cursor: pointer;
 }
