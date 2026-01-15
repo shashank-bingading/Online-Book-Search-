@@ -1,4 +1,4 @@
-import Booklist from "../../components/BookList/Booklist.jsx";
+import Booklist from "../../components/BookList/BookList.jsx";
 import Loader from "../../components/Loader/Loader.jsx";
 import "./Home.css";
 import { useOutletContext } from "react-router-dom";
